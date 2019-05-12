@@ -8,5 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class AuthPageComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }
