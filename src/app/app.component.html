@@ -1,7 +1,24 @@
-<p>Hello from app component</p>
+<div class="app">
+  <h1 class="app__title">Welcome in Angular Todo List Playground!</h1>
 
-<button routerLink="/auth/sign-in">Login</button>
-<button routerLink="/auth/sign-up">Register</button>
-<button routerLink="/list">List</button>
+  <img class="app__image" src="../assets/joker-150.png" alt="Welcome" />
 
-<router-outlet></router-outlet>
+  <nav class="app__navigation navigation">
+    <ul class="navigation__list list">
+      <li class="list__item item">
+        <a class="item__link" routerLink="">Home</a>
+      </li>
+      <li class="list__item item">
+        <a class="item__link" routerLink="/sign-in">Login</a>
+      </li>
+      <li class="list__item item">
+        <a class="item__link" routerLink="/sign-up">Register</a>
+      </li>
+      <li class="list__item item">
+        <a class="item__link" routerLink="/list">List</a>
+      </li>
+    </ul>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

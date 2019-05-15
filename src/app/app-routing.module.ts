@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'auth',
-    loadChildren: './pages/auth-page/auth-page.module#AuthPageModule'
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
   },
   {
     path: 'list',
@@ -12,8 +13,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full'
+    loadChildren: './pages/auth-page/auth-page.module#AuthPageModule'
+  },
+
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
