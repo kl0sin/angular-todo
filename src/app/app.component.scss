@@ -4,25 +4,11 @@
   font-family: $main-font;
   display: flex;
   height: 100%;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  align-items: center;
 
-  &__title {
-    font-size: 1.6em;
-    margin-bottom: 20px;
-  }
-
-  .navigation {
+  &__content {
     display: flex;
-    margin: 15px 0;
-
-    &__list {
-      display: flex;
-
-      .item {
-        margin: 0 5px;
-      }
-    }
+    justify-content: center;
   }
 }
