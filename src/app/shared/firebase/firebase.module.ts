@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { BrowserModule } from '@angular/platform-browser';
 
 const fireBaseConfig = {};
 
@@ -11,7 +10,6 @@ const fireBaseConfig = {};
   declarations: [],
   imports: [
     CommonModule,
-    BrowserModule,
     AngularFireModule.initializeApp(fireBaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule

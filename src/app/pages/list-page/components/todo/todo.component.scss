@@ -1,0 +1,19 @@
+.todo {
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100px;
+
+    &__icon {
+      cursor: pointer;
+      transition: 0.3s;
+
+      &--delete {
+        &:hover {
+          color: #f00;
+        }
+      }
+    }
+  }
+}

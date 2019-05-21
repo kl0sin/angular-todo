@@ -1,6 +1,7 @@
 @import '~src/variables';
 
 .footer {
+  font-family: $main-font;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

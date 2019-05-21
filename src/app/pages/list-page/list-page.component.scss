@@ -1,0 +1,10 @@
+@import '~src/variables';
+
+.list {
+  font-family: $main-font;
+  width: 600px;
+
+  &__title {
+    font-size: 1.2em;
+  }
+}

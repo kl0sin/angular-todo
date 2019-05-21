@@ -1,0 +1,9 @@
+<mat-list-item class="todo">
+  <mat-icon mat-list-icon class="todo__icon">folder_open</mat-icon>
+  <h4 mat-line class="todo__name">{{ todo.name }}</h4>
+  <p mat-line class="todo__date">{{ todo.created | date }}</p>
+  <div class="todo__actions actions">
+    <mat-icon mat-list-icon class="actions__icon">edit</mat-icon>
+    <mat-icon mat-list-icon class="actions__icon actions__icon--delete">delete_outline</mat-icon>
+  </div>
+</mat-list-item>

@@ -1,3 +1,8 @@
-<p>
-  list-page works!
-</p>
+<div class="list">
+  <h1 class="list__title">
+    Your todo list
+  </h1>
+  <mat-list>
+    <app-todo *ngFor="let todo of todoList" [todo]="todo"></app-todo>
+  </mat-list>
+</div>
