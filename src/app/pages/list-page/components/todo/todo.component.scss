@@ -1,4 +1,10 @@
 .todo {
+  &__icon {
+    &--completed {
+      color: #00ff00;
+    }
+  }
+
   .actions {
     display: flex;
     flex-wrap: wrap;

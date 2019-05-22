@@ -1,0 +1,22 @@
+@import '~src/variables';
+
+.sign-in {
+  box-sizing: border-box;
+  font-family: $main-font;
+  width: 100%;
+  padding: 48px 40px 36px;
+  border-radius: 8px;
+  border: 1px solid #dadce0;
+
+  &__title {
+    font-size: 1.5em;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  &__image {
+    margin: 0 auto 16px;
+    width: 130px;
+    display: block;
+  }
+}

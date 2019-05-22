@@ -9,7 +9,7 @@
 
   &__content {
     padding: 32px 16px;
-    min-height: 100%;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
   }
