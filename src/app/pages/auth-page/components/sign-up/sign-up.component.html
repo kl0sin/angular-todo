@@ -3,5 +3,8 @@
     Create new account
   </h1>
   <img class="sign-up__image" src="../../../../../assets/joker-150.png" alt="Joker" />
-  <app-form [type]="'register'" [isClear]="true"></app-form>
+  <div class="sign-up__error" *ngIf="showError">
+    {{ errorMessage }}
+  </div>
+  <app-form [type]="register" [isClear]="true" (submitEmit)="handleFormSubmit($event)"></app-form>
 </div>

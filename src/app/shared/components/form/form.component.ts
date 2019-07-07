@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -9,21 +9,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class FormComponent implements OnInit {
   @Input() type: string;
   @Input() isClear: boolean;
-  @Output() outSubmit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() submitEmit: EventEmitter<any> = new EventEmitter<any>();
 
   userForm: FormGroup;
 
   isEmail = false;
-  isFirstName = false;
-  isLastName = false;
   isPassword = false;
   isConfirmPassword = false;
 
   constructor(formBuilder: FormBuilder) {
     this.userForm = formBuilder.group({
       email: null,
-      firstName: null,
-      lastName: null,
       password: null,
       confirmPassword: null
     });
@@ -34,25 +30,26 @@ export class FormComponent implements OnInit {
   }
 
   private setUpForm(): void {
-    switch (this.type) {
-      case 'register': {
+    const formTypes = {
+      register: () => {
         this.isEmail = true;
-        this.isFirstName = true;
-        this.isLastName = true;
         this.isPassword = true;
         this.isConfirmPassword = true;
-        break;
-      }
-      default: {
+      },
+      default: () => {
         this.isEmail = true;
         this.isPassword = true;
-        break;
+        this.isConfirmPassword = false;
       }
-    }
+    };
+
+    return (formTypes[this.type] || formTypes.default)();
   }
 
   submit(): void {
-    this.outSubmit.emit(this.userForm.value);
+    if (this.userForm.valid) {
+      this.submitEmit.emit(this.userForm.value);
+    }
   }
 
   resetForm(): void {

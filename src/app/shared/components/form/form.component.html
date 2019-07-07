@@ -4,14 +4,6 @@
       <input matInput formControlName="email" required placeholder="Email" type="email" />
       <mat-error> Email is <strong>required</strong> </mat-error>
     </mat-form-field>
-    <mat-form-field class="form__input" *ngIf="isFirstName">
-      <input matInput formControlName="firstName" required placeholder="First Name" type="text" />
-      <mat-error> First name is <strong>required</strong> </mat-error>
-    </mat-form-field>
-    <mat-form-field class="form__input" *ngIf="isLastName">
-      <input matInput formControlName="lastName" required placeholder="Last Name" type="text" />
-      <mat-error> Last name is <strong>required</strong> </mat-error>
-    </mat-form-field>
     <mat-form-field class="form__input" *ngIf="isPassword">
       <input matInput formControlName="password" required placeholder="Password" type="password" />
       <mat-error> Password is <strong>required</strong> </mat-error>

@@ -3,5 +3,8 @@
     Sign in
   </h1>
   <img class="sign-in__image" src="../../../../../assets/joker-150.png" alt="Joker" />
-  <app-form></app-form>
+  <div class="sign-in__error" *ngIf="showError">
+    {{ errorMessage }}
+  </div>
+  <app-form (submitEmit)="handleFormSubmit($event)"></app-form>
 </div>

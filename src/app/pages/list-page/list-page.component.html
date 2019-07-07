@@ -2,6 +2,15 @@
   <h1 class="list__title">
     Your todo list
   </h1>
+  <form [formGroup]="todoForm" (ngSubmit)="addNewTodo()" class="list__new new">
+    <mat-form-field class="new__input">
+      <input matInput formControlName="todo" placeholder="Todo" type="text" />
+      <mat-error> Email is <strong>required</strong> </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" class="new__action">
+      Add
+    </button>
+  </form>
   <mat-list>
     <app-todo *ngFor="let todo of todoList" [todo]="todo"></app-todo>
   </mat-list>

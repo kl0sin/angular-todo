@@ -19,4 +19,13 @@
     width: 130px;
     display: block;
   }
+
+  &__error {
+    background-color: $danger;
+    color: $text-icons;
+    padding: 12px;
+    border-radius: 3px;
+    text-align: center;
+    margin: 16px 0;
+  }
 }
