@@ -3,7 +3,7 @@
   <span class="header__spacer"></span>
   <ng-container *ngIf="isUserLoggedIn; else userNotLoggedIn">
     <a mat-button routerLink="/list">List</a>
-    <a mat-button routerLink="/sign-up">Log Out</a>
+    <a mat-button (click)="logOut()">Log Out</a>
   </ng-container>
   <ng-template #userNotLoggedIn>
     <a mat-button routerLink="/sign-in">Sign In</a>

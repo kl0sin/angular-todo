@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormSignUp } from '../../../../models/form';
 import { AuthService } from '../../../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +12,7 @@ export class SignUpComponent {
   showError: boolean;
   errorMessage: string;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   handleFormSubmit(data: FormSignUp): void {
     this.resertErrorBox();
@@ -36,7 +37,7 @@ export class SignUpComponent {
     this.authService
       .register(data.email, data.password)
       .then(() => {
-        console.log('Success');
+        this.router.navigate(['/list']);
       })
       .catch(error => {
         this.handleShowError(error.message);

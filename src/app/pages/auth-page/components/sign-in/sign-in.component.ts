@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../../services/auth/auth.service';
 import { FormSignIn } from '../../../../models/form';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,17 +12,16 @@ export class SignInComponent {
   showError: boolean;
   errorMessage: string;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   handleFormSubmit(data: FormSignIn): void {
     this.authService
       .login(data.email, data.password)
       .then(() => {
-        console.log('success');
+        this.router.navigate(['/list']);
       })
       .catch(error => {
         this.handleShowError(error.message);
-        console.log(error);
       });
   }
 

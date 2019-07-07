@@ -1,15 +1,29 @@
 <div class="form">
   <form [formGroup]="userForm" (ngSubmit)="submit()">
     <mat-form-field class="form__input" *ngIf="isEmail">
-      <input matInput formControlName="email" required placeholder="Email" type="email" />
+      <input matInput formControlName="email" required placeholder="Email" type="email" autocomplete="email" />
       <mat-error> Email is <strong>required</strong> </mat-error>
     </mat-form-field>
     <mat-form-field class="form__input" *ngIf="isPassword">
-      <input matInput formControlName="password" required placeholder="Password" type="password" />
+      <input
+        matInput
+        formControlName="password"
+        required
+        placeholder="Password"
+        type="password"
+        autocomplete="new-password"
+      />
       <mat-error> Password is <strong>required</strong> </mat-error>
     </mat-form-field>
     <mat-form-field class="form__input" *ngIf="isConfirmPassword">
-      <input matInput formControlName="confirmPassword" required placeholder="Confirm Password" type="password" />
+      <input
+        matInput
+        formControlName="confirmPassword"
+        required
+        placeholder="Confirm Password"
+        type="password"
+        autocomplete="new-password"
+      />
       <mat-error> You need to <strong>confirm</strong> your password. </mat-error>
     </mat-form-field>
 

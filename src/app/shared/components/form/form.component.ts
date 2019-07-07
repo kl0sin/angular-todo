@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  @Input() type: string;
+  @Input() type = 'default';
   @Input() isClear: boolean;
   @Output() submitEmit: EventEmitter<any> = new EventEmitter<any>();
 
