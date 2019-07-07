@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Todo } from '../../models/todo';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TodosService } from '../../services/todos.service';
@@ -8,39 +8,22 @@ import { TodosService } from '../../services/todos.service';
   templateUrl: './list-page.component.html',
   styleUrls: ['./list-page.component.scss']
 })
-export class ListPageComponent implements OnInit {
+export class ListPageComponent {
   todoForm: FormGroup;
-
-  todoList: Todo[] = [
-    {
-      name: 'Note no1 ',
-      created: new Date('05/01/19'),
-      completed: true
-    },
-    {
-      name: 'Note no2',
-      created: new Date('05/02/19'),
-      completed: false
-    },
-    {
-      name: 'Note no3',
-      created: new Date('05/03/19'),
-      completed: false
-    }
-  ];
+  todoList: Todo[];
 
   constructor(private formBuilder: FormBuilder, private todoService: TodosService) {
     this.todoForm = formBuilder.group({
       todo: null
     });
+
+    this.todoService.todos$.subscribe(todos => {
+      this.todoList = todos;
+    });
   }
 
-  ngOnInit(): void {}
-
   addNewTodo(): void {
-    console.log('addNewTodo');
-    const newTodo = this.todoForm.value;
-    console.log(newTodo);
+    const newTodo = this.todoForm.value.todo;
     this.todoService.addTodo(newTodo);
   }
 }

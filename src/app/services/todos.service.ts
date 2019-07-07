@@ -7,18 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class TodosService {
   private todosCollestion: AngularFirestoreCollection<any>;
-  todos: Observable<any>;
+  todos$: Observable<any>;
 
   constructor(private angularFirestore: AngularFirestore) {
-    this.todosCollestion = angularFirestore.collection<any>('todos');
-    this.todos = this.todosCollestion.valueChanges();
+    this.todosCollestion = angularFirestore.collection<any>(`todos`);
+    this.todos$ = this.todosCollestion.valueChanges();
   }
 
-  addTodo(todo: any): void {
+  addTodo(todo: string): void {
     const today = new Date();
-
     const newTodo = { name: todo, created: today, completed: false };
-
     this.todosCollestion.add(newTodo);
   }
 }

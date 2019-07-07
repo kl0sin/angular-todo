@@ -1,5 +1,10 @@
 export interface Todo {
   name: string;
-  created: Date;
+  created: FirebaseTime;
   completed: boolean;
+}
+
+interface FirebaseTime {
+  nanoseconds: number;
+  seconds: number;
 }
