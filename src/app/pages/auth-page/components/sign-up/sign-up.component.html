@@ -6,5 +6,5 @@
   <div class="sign-up__error" *ngIf="showError">
     {{ errorMessage }}
   </div>
-  <app-form [type]="register" [isClear]="true" (submitEmit)="handleFormSubmit($event)"></app-form>
+  <app-form [type]="'register'" [isClear]="true" (submitEmit)="handleFormSubmit($event)"></app-form>
 </div>
